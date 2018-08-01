@@ -1,0 +1,102 @@
+body {
+    background: url(background-rpg.jpg);
+    position: relative;
+}
+
+header {
+      text-align: center;
+      background: black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-top: solid rgb(253, 253, 253) 3px;
+      border-bottom: solid rgb(255, 255, 255) 3px;  
+}
+
+#title {
+    /*font-family: fantasy;*/
+    font-weight: bolder;
+    margin: 0;
+    letter-spacing: 5px;
+    padding: 7px; 
+    color: white;
+    margin: 0;  
+    
+}
+
+.container {
+    height: 100%;
+    padding: 0;
+}
+
+img {
+    height: auto;
+    width: 15%;
+    padding: 5px;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+
+img:hover {
+border: ridge white 2px;
+border-radius: 5px;
+}
+
+#fightButton:hover {
+        border: ridge white 2px;
+        border-radius: 5px;
+}
+
+#actionRow {
+    width: 100%;
+    margin-top: 3%;
+    height: 90%;
+    border-top: solid #070707 2px;
+}
+
+
+.col-lg-5 {
+    text-align: center;
+    height: 100%;
+    
+}
+
+
+.fighters {
+    text-align: center;
+    position: relative;
+    /*border-bottom: solid #070707 2px;*/
+   
+}
+
+.fight  {
+    width: 35%;
+    height: auto;
+    visibility: hidden;
+    position: absolute;
+    left: 30%;
+   
+}
+
+.Enemies {
+    width: 35%;
+    height: auto;
+    visibility: hidden;
+    position: absolute;
+    left: 30%;
+}
+
+.col-lg-12 {
+    margin-top: 5px;
+}
+
+#action {
+    margin-top: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+
