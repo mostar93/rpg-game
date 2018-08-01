@@ -201,7 +201,7 @@ $(document).ready(function() {
         EnemyList = [];
         EnemyList.push(targaryanEnemy, nightEnemy, tullyEnemy, unsulliedEnemy);
         repeatFunc(starkFight);
-        $("#fightButton").attr("id", "starkButton");
+        // $("#fightButton").attr("id", "starkButton");
     });
 
     $("#targaryan").on('click', function(){
@@ -231,8 +231,8 @@ $(document).ready(function() {
 });
 
 
-var battle = {
-        startBattle: function (x, y, a, b, c, d){
+
+        battle = function (x, y, a, b, c, d){
             if (y !== 0 && x !== 0) {
                     c.attack();
                     d.attack();   
@@ -256,9 +256,9 @@ var battle = {
                 }
 
         }
-};
+
 
 
 $("#fightButton").on('click', function(){
-    battle.startBattle(targaryan.health, stark.health, robattackPower, danyattackPower, stark, targaryan);
+    battle.startGame(targaryan.health, stark.health, robattackPower, danyattackPower, stark, targaryan);
 });
