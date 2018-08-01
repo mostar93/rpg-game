@@ -21,7 +21,7 @@ var fight = $(".fight");
 var Enemies = $(".Enemies");
 
 var Fighters = [];
-//You = []
+You = []
 var EnemyList = []
 
             
@@ -198,33 +198,43 @@ function repeatFunc(x) {
 $(document).ready(function() {
 
     $("#stark").on('click', function(){
+        You = [];
         EnemyList = [];
         EnemyList.push(targaryanEnemy, nightEnemy, tullyEnemy, unsulliedEnemy);
+        You.push(starkFight);
         repeatFunc(starkFight);
         // $("#fightButton").attr("id", "starkButton");
     });
 
     $("#targaryan").on('click', function(){
+        You = [];
         EnemyList = [];
         EnemyList.push(starkEnemy, nightEnemy, tullyEnemy, unsulliedEnemy);
+        You.push(targaryanFight);
         repeatFunc(targaryanFight);
     });
 
     $("#nightwatch").on('click', function(){
+        You = [];
         EnemyList = [];
         EnemyList.push(targaryanEnemy, starkEnemy, tullyEnemy, unsulliedEnemy);
+        You.push(nightFight);
         repeatFunc(nightFight);
     });
 
     $("#tully").on('click', function(){
+        You = [];
         EnemyList = [];
         EnemyList.push(targaryanEnemy, nightEnemy, starkEnemy, unsulliedEnemy);
+        You.push(tullyFight);
         repeatFunc(tullyFight);
     });
 
     $("#unsullied").on('click', function(){
+        You = [];
         EnemyList = [];
         EnemyList.push(targaryanEnemy, nightEnemy, tullyEnemy, starkEnemy);
+        You.push(unsulliedFight);
         repeatFunc(unsulliedFight);
     });
 
@@ -233,6 +243,7 @@ $(document).ready(function() {
 
 
         battle = function (x, y, a, b, c, d){
+            
             if (y !== 0 && x !== 0) {
                     c.attack();
                     d.attack();   
@@ -251,8 +262,10 @@ $(document).ready(function() {
                     console.log(y);
                     // return y;
                 } 
-                if (x === 0) {
+                if (x <= 0) {
                     alert ("you won the battle!");
+                    EnemyList[i].css("visibility", "hidden");
+                    $("targaryan").attr("class", "hidden");
                 }
 
         }
@@ -260,5 +273,5 @@ $(document).ready(function() {
 
 
 $("#fightButton").on('click', function(){
-    battle.startGame(targaryan.health, stark.health, robattackPower, danyattackPower, stark, targaryan);
+    battle(targaryan.health, stark.health, robattackPower, danyattackPower, stark, targaryan);
 });
